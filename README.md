@@ -18,6 +18,7 @@ If even this the above command is not working then use this command-->  namp -f 
 10. Identifiy hostname/Domain name--> nmap -sL 192.168.77.129
 11. Scan a list of ip address--> namp -iL ips.txt
 12. scan few particular port--> nmap -p 80 443 21 ip/domain name
+13. To scan entire subnet--> nmap -sn ip/24
 ```
 # Enumeration
 ```
@@ -117,6 +118,7 @@ Also
 ```
 # Find FQDN
 ```
+host + domain name--> nmap -sV -sC -v (ip) or
 nmap -p389 –sV -iL <target_list>  or nmap -p389 –sV <target_IP> (Find the FQDN in a subnet/network)
 ```
 # Cracking Wi-Fi networks
@@ -135,13 +137,7 @@ check publish msg --> mqtt --> check header flags --> msg type
 ```
 Check RDP enabled after getting ip- nmap -p 3389 -iL ip.txt | grep open (ip.txt contains all the alive hosts from target subnet)
 Check MySQL service running- nmap -p 3306 -iL ip.txt | grep open        (ip.txt contains all the alive hosts from target subnet)
-```
-```
-To scan entire subnet :
-nmap -sn ip/24
-FQDN :
-host + domain name
-nmap -sV -sC -v (ip)
+
 Service and version :
 nmap -sV -A ip/24
 SMB : Bookmarks = smb password cracking and enum4linux cheat sheet
@@ -213,8 +209,9 @@ sqlmap -u "website" --cookie="value" --dbs
 DVWA:
 login> go to the path > copy the file and paste it in hashes.com (or)
 Crackstation.org
-
-
+```
+# Malware Analysis
+```
 RAT: Ports[9871,6703]
 nmap -p- (ip)
 run client.exe [theef]
