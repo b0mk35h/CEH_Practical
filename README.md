@@ -93,6 +93,8 @@ sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that yo
 ```
 # Android
 ```
+nmap ip/24 -Pn
+..........
 1. nmap ip -sV -p 5555    (Scan for adb port)
 2. adb connect IP:5555    (Connect adb with parrot)
 3. adb shell              (Access mobile device on parrot)
