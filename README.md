@@ -130,8 +130,9 @@ Also
 ```
 # Find FQDN
 ```
-host + domain name--> nmap -sV -sC -v (ip) or
-nmap -p389 –sV -iL <target_list>  or nmap -p389 –sV <target_IP> (Find the FQDN in a subnet/network)
+FQDN = Fully Qualified Domain name ( means Hostname + domain name ) 
+1. nmap -sV -sC -v (ip) or
+2. nmap -p389 –sV -iL <target_list>  or nmap -p389 –sV <target_IP> (Find the FQDN in a subnet/network)
 ```
 # Cracking Wi-Fi networks
 ```
