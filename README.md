@@ -139,8 +139,10 @@ FQDN = Fully Qualified Domain name ( means Hostname + domain name )
 1. WEP
 aircrack-ng [pcap file] (For cracking WEP network)
 2. WAP2
-i. aircrack-ng -a2 -b [Target BSSID] -w [password_Wordlist.txt] [WP2 PCAP file] (WPA2 or other networks by the captured .pcap file)
-ii. Aircrack-ng  -w password_wordlist.txt [wificap.PAPC file]
+i. Aircrack-ng  -w password_wordlist.txt [wificap.PAPC file] if not works use bellow command
+ii. aircrack-ng -a2 -b [Target BSSID] -w [password_Wordlist.txt] [WP2 PCAP file] (WPA2 or other networks by the captured .pcap file)
+*** Find BSSID
+Open PAPC file using wireshark > Click on any packet > Click on IEEE 802.11 Probs Response, Flag > BSSID will be there
 ```
 # Cracking IOT Devive
 ```
