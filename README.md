@@ -227,9 +227,13 @@ jsql
 [url with id] & attack
 sqlmap
 sqlmap -u "website" --cookie="value" --dbs
-DVWA:
-login> go to the path > copy the file and paste it in hashes.com (or)
-Crackstation.org
+```
+# Vulnerability Analysis
+```
+Openvas And Nessus also used for Vulnerability analysis
+Using Nmap
+nmap -Pn --script vuln (ip)
+Fine and paste cve id to google > go to  NVD site > and get the score
 ```
 # Malware Analysis
 ```
