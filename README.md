@@ -19,6 +19,7 @@ If even this the above command is not working then use this command-->  namp -f 
 11. Scan a list of ip address--> namp -iL ips.txt
 12. scan few particular port--> nmap -p 80 443 21 ip/domain name
 13. To scan entire subnet--> nmap -sn ip/24
+14. Check Service and version --> nmap -sV -A ip/24
 ```
 # Enumeration
 ```
@@ -193,9 +194,6 @@ cat /path/file.txt
 ```
 Check RDP enabled after getting ip- nmap -p 3389 -iL ip.txt | grep open (ip.txt contains all the alive hosts from target subnet)
 Check MySQL service running- nmap -p 3306 -iL ip.txt | grep open        (ip.txt contains all the alive hosts from target subnet)
-
-Service and version :
-nmap -sV -A ip/24
 
 SMB : Bookmarks = smb password cracking and enum4linux cheat sheet
 nmap -p 139,445 --script vuln ip
