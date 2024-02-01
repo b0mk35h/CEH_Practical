@@ -110,16 +110,20 @@ nmap ip/24 -Pn
 3. adb shell              (Access mobile device on parrot)
 4. pwd --> ls --> cd sdcard --> ls --> cat secret.txt (If nothing is there then go to Downloads folder using: cd downloads, may need to search others also)
 -------------------------------------------
-1. nmap -p 5555 ip
-2. adb connect ip:5555
-3. adb shell
-4. ls
+1. nmap -p 5555 ip  (Scan for adb port)
+2. adb connect ip:5555  (Connect adb with parrot)
+3. adb shell  (Access mobile device on parrot)
+4. ls  (Check all file)
 5. cd sdcard/
-6. ls
-7. pwd and exit
-8. adb pull
-9. apt install ent, ent file
-10. sha384sum file
+6. ls (To find the folder and file)
+7. pwd  (Check file path)
+8. exit
+10. (Sudo permission)
+11. adb pull /file_path_in_mobile
+12. check the folder and go to the folder
+13. apt install ent (if required)
+14 . ent  exicuteable_file ( Check all file entrophy value and find the highest one)
+15. sha384sum exicuteable_file (select the required entropy value file)
 ```
 # Wireshark
 ```
