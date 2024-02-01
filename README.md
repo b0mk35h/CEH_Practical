@@ -141,13 +141,18 @@ nmap ip/24 -Pn
 ```
 # Wireshark
 ```
+DOS:
+Open wireshark > Click on Statistics > Click on IPv4 Statistics > Click on Source and Destination Addresses > use display filter --> tcp.flags.syn==1 and tcp.flags.ack==0 > [Most packets=attacking IP]
+ 
 tcp.flags.syn == 1 and tcp.flags.ack == 0    (How many machines) or Go to statistics IPv4 addresses--> Source and Destination ---> Then you can apply the filter given
-tcp.flags.syn == 1   (Which machine for dos)
-http.request.method == POST   (for passwords) or click tools ---> credentials
-Also
+tcp.flags.syn == 1   (Which machine for dos find attacking IP)
+
+Find login info:
+Open Wireshark > Open the file >apply filter--> http.request.method == POST > click on the filter request (for passwords) > credentials will be shown or 
+Open Wireshark > Open the file >apply filter--> http.request.method == POST > Right click on filter request > Follow > TCP Stream credentials will be shown
+
 DDOS:
-wireshark> statistics ipv4>source and destination
-filter[tcp.flags.syn==1 and tcp.flags.ack==0] [Most packets=ans]
+Open wireshark > Click on Statistics > Click on IPv4 Statistics > Click on Source and Destination Addresses > use display filter --> tcp.flags.syn==1 and tcp.flags.ack==0 > [Most packets=attacking IP]
 ```
 # Find FQDN
 ```
