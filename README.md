@@ -36,7 +36,7 @@ If even this the above command is not working then use this command-->  namp -f 
 1. Hide Data Using Whitespace Stegnography--> snow -C -m "My swiss account number is 121212121212" -p "magic" readme.txt readme2.txt  (magic is password and your secret is stored in readme2.txt along with the content of readme.txt)
 2. To Display Hidden Data- snow -C -p "magic" readme2.txt (then it will show the content of readme2.txt content)
 3. Image Stegnography using Openstego or stegonline
-Openstego > use password if required or
+Open Openstego > Select input file .png, .jpg > Select Output file > Give password if required or
 stegonline > upload the file and type password
 ```
 # Cryptography 
