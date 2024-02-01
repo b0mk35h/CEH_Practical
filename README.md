@@ -31,11 +31,13 @@ If even this the above command is not working then use this command-->  namp -f 
 6. NetBios enum using enum4linux- enum4linux -u martin -p apple -n 10.10.10.10 (all info)
 				  enum4linux -u martin -p apple -P 10.10.10.10 (policy info)
 ```
-#  Quick Overview (Stegnography) --> Snow , Openstego
+#  Stegnography--> Snow , Openstego
 ```
-1. Hide Data Using Whitespace Stegnography- snow -C -m "My swiss account number is 121212121212" -p "magic" readme.txt readme2.txt  (magic is password and your secret is stored in readme2.txt along with the content of readme.txt)
+1. Hide Data Using Whitespace Stegnography--> snow -C -m "My swiss account number is 121212121212" -p "magic" readme.txt readme2.txt  (magic is password and your secret is stored in readme2.txt along with the content of readme.txt)
 2. To Display Hidden Data- snow -C -p "magic" readme2.txt (then it will show the content of readme2.txt content)
-3. Image Stegnography using Openstego- PRACTICE ??
+3. Image Stegnography using Openstego or stegonline
+Openstego > use password if required or
+stegonline > upload the file and type password
 ```
 # Cryptography 
 ```
@@ -197,11 +199,6 @@ ls
 find . -name file.txt
 cat /path/file.txt
 
-steganography :
-tools :
-openstego or stegonline
-upload the file and type password
-
 FTP:
 nmap -A -p 21 ip
 hydra -L user.txt -P pass.txt ftp://ip
@@ -245,13 +242,15 @@ Fine and paste cve id to google > go to  NVD site > and get the score
 ```
 # Malware Analysis
 ```
+Analysis Malicious file
+DIE > upload file > file info or
+PE extraction tools like ghidra> open > upload > details
+```
+# Remote Access Trojen
+```
 RAT: Ports[9871,6703]
 nmap -p- (ip)
 run client.exe [theef]
 enter ip,port and connect
 file explorer>file.txt
-
-Analysis Malicious file
-DIE > upload file > file info or
-PE extraction tools like ghidra> open > upload > details
 ```
