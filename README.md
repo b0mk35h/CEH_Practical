@@ -37,6 +37,12 @@ If even this the above command is not working then use this command-->  namp -f 
 2. To Display Hidden Data- snow -C -p "magic" readme2.txt (then it will show the content of readme2.txt content)
 3. Image Stegnography using Openstego- PRACTICE ??
 ```
+# Cryptography 
+```
+1. VERACRYPT
+Open veracrypt > select Any drive J, k, L > Select mention file > Click on mount > enter pass[decrypt=hashes.com] > click ok > Now open the folder and content.
+veracrypt >select file>enter pass[decrypt=hashes.com]>open folder and see text
+```
 #  Sniffing
 ```
 1. Password Sniffing using Wireshark- In pcap file apply filter: http.request.method==POST (you will get all the post request) Now to capture password click on edit in menu bar, then near Find packet section, on the "display filter" select "string", also select "Packet details" from the drop down of "Packet list", also change "narrow & wide" to "Narrow UTF-8 & ASCII", and then type "pwd" in the find section.
@@ -219,7 +225,4 @@ nmap -p- (ip)
 run client.exe [theef]
 enter ip,port and connect
 file explorer>file.txt
-VERACRYPT:
-veracrypt>select file>enter pass[decrypt=hashes.com]>open folder and see
-text
 ```
