@@ -42,7 +42,11 @@ If even this the above command is not working then use this command-->  namp -f 
 1. VERACRYPT
 Open veracrypt > select Any drive J, k, L > Select mention file > Click on mount > enter pass[decrypt=hashes.com] > click ok > Now open the folder and content.
 veracrypt >select file>enter pass[decrypt=hashes.com]>open folder and see text
+2. BCTextEncoder
+Open BCTextEncoder > Past Encoded value > Click on Decode > Decode will Done
 ```
+# Cracking Hashes
+Use [Crack Station](https://crackstation.net/) or [Hashes.com](https://hashes.com/en/decrypt/hash)
 #  Sniffing
 ```
 1. Password Sniffing using Wireshark- In pcap file apply filter: http.request.method==POST (you will get all the post request) Now to capture password click on edit in menu bar, then near Find packet section, on the "display filter" select "string", also select "Packet details" from the drop down of "Packet list", also change "narrow & wide" to "Narrow UTF-8 & ASCII", and then type "pwd" in the find section.
