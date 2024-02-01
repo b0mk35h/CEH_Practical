@@ -134,11 +134,13 @@ FQDN = Fully Qualified Domain name ( means Hostname + domain name )
 1. nmap -sV -sC -v (ip) or
 2. nmap -p389 –sV -iL <target_list>  or nmap -p389 –sV <target_IP> -Pn (Find the FQDN in a subnet/network)
 ```
-# Cracking Wi-Fi networks
+# Cracking Wi-Fi
 ```
-Cracking Wifi Password
+1. WEP
 aircrack-ng [pcap file] (For cracking WEP network)
-aircrack-ng -a2 -b [Target BSSID] -w [password_Wordlist.txt] [WP2 PCAP file] (For cracking WPA2 or other networks through the captured .pcap file)
+2. WAP2
+i. aircrack-ng -a2 -b [Target BSSID] -w [password_Wordlist.txt] [WP2 PCAP file] (WPA2 or other networks by the captured .pcap file)
+ii. Aircrack-ng  -w password_wordlist.txt [wificap.PAPC file]
 ```
 # Cracking IOT Devive
 ```
