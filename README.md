@@ -76,6 +76,18 @@ hydra -L user.txt -P pass.txt ftp://ip
 ftp ip
 and type: username and password
 Now access the machine
+
+5. Crack SMB password and enum4linux cheat sheet
+nmap -sV -p 139,445 --script vuln ip (sometimes use 1445)
+hydra -L user.txt -P pass.txt ip_addr smb (Here we will get username and password)
+smbclient //(ip)/share
+smbclient -L ip
+get file and cat file and use bctextencoder if it is encoded
+
+SMB login command
+smbclient -L ip
+smbclient -L ip -U user_name
+smbclient -L ip -p [139/445] -U user_name
 ```
 #  Hacking Web Application
 ```
@@ -203,13 +215,6 @@ cat /path/file.txt
 ```
 Check RDP enabled after getting ip- nmap -p 3389 -iL ip.txt | grep open (ip.txt contains all the alive hosts from target subnet)
 Check MySQL service running- nmap -p 3306 -iL ip.txt | grep open        (ip.txt contains all the alive hosts from target subnet)
-
-SMB : Bookmarks = smb password cracking and enum4linux cheat sheet
-nmap -p 139,445 --script vuln ip
-hydra -L user.txt -P pass.txt ip smb (or) Check bookmark
-smbclient //(ip)/share
-smbclient -L ip
-get file and cat file and use bctextencoder if it is encoded
 
 Telnet : Bookmark= password cracking telnet
 nmap -vv ip (or) nmap -p 22,23,80,3389 ip
