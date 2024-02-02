@@ -18,7 +18,7 @@ If even this the above command is not working then use this command-->  namp -f 
 10. Identifiy hostname/Domain name--> nmap -sL 192.168.77.129
 11. Scan a list of ip address--> namp -iL ips.txt
 12. scan few particular port--> nmap -p 80 443 21 ip/domain name
-13. To scan entire subnet--> nmap -sn ip/24
+13. To scan entire subnet--> nmap -sn ip/24 or nbtscan -r 192.168.7.0/24 (if 192.168.7.5)
 14. Check Service and version --> nmap -sV -A ip/24
 ```
 # Enumeration
