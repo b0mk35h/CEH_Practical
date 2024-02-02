@@ -39,6 +39,7 @@ If even this the above command is not working then use this command-->  namp -f 
 3. Image Stegnography using Openstego or stegonline
 Open Openstego > Select input file .png, .jpg > Select Output file > Give password if required or
 stegonline > upload the file > Extract file/data > select R, G, B in row 5 > click on go > Here is result.
+```
 
 # Cryptography 
 ```
