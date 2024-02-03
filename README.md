@@ -234,16 +234,16 @@ cat /path/file.txt
 ```
 #  Some extra work 
 ```
-nmap -sV -sC -A -Pn ip/24 (can use for all scan)
+i. nmap -sV -sC -A -Pn ip/24 (can use for all scan)
 
-nikto -h http://www.goodshopping.com -Tuning 1 
+ii. nikto -h http://www.goodshopping.com -Tuning 1 
 
-dirsearch -u uri
+iii. dirsearch -u uri
 
-Check RDP enabled after getting ip- nmap -p 3389 -iL ip.txt | grep open (ip.txt contains all the alive hosts from target subnet)
-Check MySQL service running- nmap -p 3306 -iL ip.txt | grep open        (ip.txt contains all the alive hosts from target subnet)
+iv. Check RDP enabled after getting ip- nmap -p 3389 -iL ip.txt | grep open (ip.txt contains all the alive hosts from target subnet)
+v. Check MySQL service running- nmap -p 3306 -iL ip.txt | grep open        (ip.txt contains all the alive hosts from target subnet)
 
-Telnet : Bookmark= password cracking telnet
+vi. Telnet : Bookmark= password cracking telnet
 nmap -vv ip (or) nmap -p 22,23,80,3389 ip
 telnet (ip) port(80)
 GET /HTTP/1.1
@@ -260,6 +260,7 @@ cat /path/file.txt
 
 DVWA:
 ZAP
+nmap -sV -sC -A -Pn ip/24
 use dirb or dirsearch
 curl -i -X OPTIONS http://192.168.0.1/uploads/
 payload :
