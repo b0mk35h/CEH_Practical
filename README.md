@@ -67,19 +67,19 @@ Use [Crack Station](https://crackstation.net/) or [Hashes.com](https://hashes.co
 Then go to Desktop and in Ceh tools folder you will find wordlists, here you will find usernames and passwords file.
 Now in terminal type-  hydra -L /home/attacker/Desktop/CEH_TOOLS/Wordlists/Username.txt -P /home/attacker/Desktop/CEH_TOOLS/Wordlists/Password.txt ftp://10.10.10.10
 
-hydra -l user -P passlist.txt ftp://10.10.10.10 (if username is known)
+hydra -l user -P passlist.txt ftp://10.10.10.10 (if username is known) ( -L => for known username, -l => for list of username)
 
 4. Crack FTP
 nmap -A -p 21 ip (Find os running)
 sudo su (become root)
-hydra -L user.txt -P pass.txt ftp://ip
+hydra -L user.txt -P pass.txt ftp://ip ( -L => for known username, -l => for list of username)
 ftp ip
 and type: username and password
 Now access the machine
 
 5. Crack SMB password and enum4linux cheat sheet
 nmap -sV -p 139,445 --script vuln ip (sometimes use 1445)
-hydra -L user.txt -P pass.txt ip_addr smb (Here we will get username and password)
+hydra -L user.txt -P pass.txt ip_addr smb (Here we will get username and password) ( -L => for known username, -l => for list of username)
 smbclient //(ip)/share
 smbclient -L ip
 get file and cat file and use bctextencoder if it is encoded
@@ -195,6 +195,7 @@ Open Wireshark > Open the file >apply filter--> http.request.method == POST > cl
 Open Wireshark > Open the file >apply filter--> http.request.method == POST > Right click on filter request > Follow > TCP Stream credentials will be shown
 
 DDOS:
+wireshark > conversations > IPv4 > most byte
 Open wireshark > Click on Statistics > Click on IPv4 Statistics > Click on Source and Destination Addresses > use display filter --> tcp.flags.syn==1 and tcp.flags.ack==0 > [Most packets=attacking IP]
 ```
 # Find FQDN
@@ -202,6 +203,7 @@ Open wireshark > Click on Statistics > Click on IPv4 Statistics > Click on Sourc
 FQDN = Fully Qualified Domain name ( means Hostname + domain name ) 
 1. nmap -sV -sC -v (ip) or
 2. nmap -p389 –sV -iL <target_list>  or nmap -p389 –sV <target_IP> -Pn (Find the FQDN in a subnet/network)
+3. nmap -T4 -A ip/24
 ```
 # Cracking Wi-Fi
 ```
@@ -229,11 +231,15 @@ cd /
 find . -name file.txt
 cat /path/file.txt
 2.
-
-
 ```
 #  Some extra work 
 ```
+nmap -sV -sC -A -Pn ip/24 (can use for all scan)
+
+nikto -h http://www.goodshopping.com -Tuning 1 
+
+dirsearch -u uri
+
 Check RDP enabled after getting ip- nmap -p 3389 -iL ip.txt | grep open (ip.txt contains all the alive hosts from target subnet)
 Check MySQL service running- nmap -p 3306 -iL ip.txt | grep open        (ip.txt contains all the alive hosts from target subnet)
 
@@ -273,6 +279,7 @@ Fine and paste cve id to google > go to  NVD site > and get the score
 ```
 # Malware Analysis
 ```
+***PEID malware analysis (Windows)
 Analysis Malicious file
 DIE > upload file > file info or
 PE extraction tools like ghidra> open > upload > details
